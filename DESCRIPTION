@@ -1,0 +1,14 @@
+Package: crisprConfig
+Title: Config package to make the local use of the crisprVerse easier
+Version: 0.99.0
+Authors@R: c(
+    person("Jean-Philippe", "Fortin", email = "fortin946@gmail.com", role = c("aut", "cre"))
+    )
+Description: Config package to make the local use of the crisprVerse easier
+Depends: R (>= 4.2.0)
+Imports:
+    crisprVerse
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
+LazyData: true
