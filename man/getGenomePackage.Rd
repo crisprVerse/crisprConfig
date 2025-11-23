@@ -4,7 +4,7 @@
 \alias{getGenomePackage}
 \title{Shortcut to get a default BSGenome object}
 \usage{
-getGenomePackage(species = c("human", "mouse", "rat", "fly", "cyno5", "cyno6"))
+getGenomePackage(species = c("human", "mouse"))
 }
 \arguments{
 \item{species}{String specifying which species.

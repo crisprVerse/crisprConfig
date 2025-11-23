@@ -12,47 +12,30 @@
 #' @export
 #' @importFrom BSgenome.Hsapiens.UCSC.hg38 BSgenome.Hsapiens.UCSC.hg38
 #' @importFrom BSgenome.Mmusculus.UCSC.mm10 BSgenome.Mmusculus.UCSC.mm10
-#' @importFrom BSgenome.Rnorvegicus.UCSC.rn6 BSgenome.Rnorvegicus.UCSC.rn6
-#' @importFrom BSgenome.Dmelanogaster.UCSC.dm6 BSgenome.Dmelanogaster.UCSC.dm6
-#' @importFrom BSgenome.Mfascicularis.NCBI.6.0 BSgenome.Mfascicularis.NCBI.6.0
-#' @importFrom BSgenome.Mfascicularis.NCBI.5.0 BSgenome.Mfascicularis.NCBI.5.0
 getGenomePackage <- function(species=c("human",
-                                       "mouse",
-                                       "rat",
-                                       "fly",
-                                       "cyno5",
-                                       "cyno6")
+                                       "mouse")
 ){
     species <- match.arg(species)
     if (species=="human"){
         bsgenome <- BSgenome.Hsapiens.UCSC.hg38
     } else if (species=="mouse"){
         bsgenome <- BSgenome.Mmusculus.UCSC.mm10
-    } else if (species=="rat"){
-        bsgenome <- BSgenome.Rnorvegicus.UCSC.rn6
-    } else if (species=="fly"){
-        bsgenome <- BSgenome.Dmelanogaster.UCSC.dm6
-    } else if (species=="cyno5"){
-        bsgenome <- BSgenome.Mfascicularis.NCBI.5.0
-        bsgenome <- .fixCyno5BSgenome(bsgenome)
-    } else if (species=="cyno6"){
-        bsgenome <- BSgenome.Mfascicularis.NCBI.6.0
-    }
+    } 
     return(bsgenome)
 }
 
 
 
-#' @importFrom GenomeInfoDb seqinfo seqinfo<- 
-#' @importFrom GenomeInfoDb seqnames seqnames<-
-.fixCyno5BSgenome <- function(x){
-    seq <- seqinfo(x)
-    wh <- which(grepl("MFA", seqnames(seq)))
-    seqnames(seq)[wh] <- gsub("MFA","", seqnames(seq)[wh])
-    seqinfo(x,
-            new2old=seq_along(seqinfo(x))) <- seq
-    return(x)
-}
+# #' @importFrom GenomeInfoDb seqinfo seqinfo<- 
+# #' @importFrom GenomeInfoDb seqnames seqnames<-
+# .fixCyno5BSgenome <- function(x){
+#     seq <- seqinfo(x)
+#     wh <- which(grepl("MFA", seqnames(seq)))
+#     seqnames(seq)[wh] <- gsub("MFA","", seqnames(seq)[wh])
+#     seqinfo(x,
+#             new2old=seq_along(seqinfo(x))) <- seq
+#     return(x)
+# }
 
 
 

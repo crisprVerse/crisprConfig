@@ -1,6 +1,6 @@
 Package: crisprConfig
 Title: Config package to make the local use of the crisprVerse easier
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
     person("Jean-Philippe", "Fortin", email = "fortin946@gmail.com", role = c("aut", "cre"))
     )

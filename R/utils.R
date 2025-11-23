@@ -10,7 +10,7 @@ compact <- function(l){
     os   <- info[["sysname"]]
     node <- info[["nodename"]]
     user <- info[["user"]]
-    if (os=="Darwin" & user=="fortinj2"){
+    if (os=="Darwin" & user=="fortin946"){
         where <- "myLaptop"
     } 
     return(where)
